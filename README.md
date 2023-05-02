@@ -2,8 +2,7 @@
 
 ## Dividing Equation for LDTYPE 3
 
-$$ 
-FS_b = 
+$$FS_b = 
    \underbrace{\frac{w_1(L - l_1)^3}{20L^3}}_\text{L} 
 \{ \underbrace{(7L + 8l_1)}_\text{A} - 
    \underbrace{\frac{l_2(3L + 2l_1)}{L - l_1}}_\text{B}  
@@ -15,11 +14,9 @@ FS_b =
 [  \underbrace{1 + \frac{l_2}{L - l_1} + \frac{l_2^2}{(L - l_1)^2}}_\text{D1} ] -
    \underbrace{\frac{l_2^3}{(L - l_1)^2}}_\text{E}
    \underbrace{2 + \frac{15L - 8l_2}{L - l_1}}_\text{E1}
-\}
-$$
+\}$$
 
-$$ 
-FM_b = 
+$$FM_b = 
    \underbrace{\frac{w_1(L - l_1)^3}{60L^3}}_\text{L} 
 \{ \underbrace{3(L + 4l_1)}_\text{A} - 
    \underbrace{\frac{l_2(2L + 3l_1)}{L - l_1}}_\text{B}  
@@ -31,5 +28,4 @@ FM_b =
 [  \underbrace{1 + \frac{l_2}{L - l_1} + \frac{l_2^2}{(L - l_1)^2}}_\text{D1} ] -
    \underbrace{\frac{3l_2^3}{(L - l_1)^2}}_\text{E}
    \underbrace{1 + \frac{5L - 4l_2}{L - l_1}}_\text{E1}
-\}
-$$
+\}$$
