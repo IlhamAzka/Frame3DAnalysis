@@ -359,8 +359,6 @@ PT = table(PN(:, 1), P(:, 1), 'VariableNames', {'GNN' 'Joint_Load'});
 disp(PT)
 
 % PART XI
-% P = inv(S) * P;
-% Manual way
 for i=1:NDOF
     Z1 = S(i, i);
     for j=1:NDOF
@@ -477,7 +475,7 @@ function DISPLACEMENT_DISPLAY(NJ, NCJT, NS, NSC, P, NDOF)
         end
     end
 
-    % SPLITTING DISPLACEMENT INTO X AND Y AXIS
+    % SPLITTING DISPLACEMENT INTO X, Y, Z
     u1     = zeros(NJ, 1);
     u2     = zeros(NJ, 1);
     u3     = zeros(NJ, 1);
@@ -527,7 +525,6 @@ function REACTION_FORCE_DISPLAY(NJ, NCJT, NR, NS, NSC, R, MSUP)
         temp_table_r(i * NCJT - 5, 1) = NSC(MSUP(i, 1) * NCJT - 5);
     end
     % MATCH TEMP_R AND SUPPORT_GNN
-    % disp(num2str(temp_r))
     for i=1:NS*NCJT
         for j=1:NR
             if temp_table_r(i, 1) == temp_r(j, 1)
@@ -535,9 +532,7 @@ function REACTION_FORCE_DISPLAY(NJ, NCJT, NR, NS, NSC, R, MSUP)
             end
         end
     end
-    % fprintf("\n\nTEMP TABLE R\n\n");
-    % disp(num2str(temp_table_r))
-    % SPLIT TO X AND Y
+    % SPLIT TO X, Y, and Z
     r1 = zeros(NS, 1);
     r2 = zeros(NS, 1);
     r3 = zeros(NS, 1);
