@@ -2,11 +2,8 @@
 
 ## Dividing Equation for LDTYPE 3
 Because of the long equation of fixed end shear and fixed end moment on the beginning end of the member the equation is divided into different parts so the matlab code for the equation more readable
-
 <img src="fsb.svg">
-
 <img src="fmb.svg">
-
 <!-- $$ -->
 <!-- FS_b = \underbrace{\frac{w_1(L - l_1)^3}{20L^3}}_\text{L}  -->
 <!-- \{ \underbrace{(7L + 8l_1)}_\text{A} \} -->
