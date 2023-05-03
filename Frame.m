@@ -1,15 +1,6 @@
 % AUTHOR : ILHAM AZKA RAMADHAN 
 % NIM    : 15020131
 
-%{
-  TODO
-  - check equation in every ldtype
-  - display displacement,  
-  - wrap display code in a function
-  - wrap long code in a seperate function
-  - refactor code
-%}
-
 fprintf("\nINPUT NOMOR SOAL ANTARA 1-2\n")
 filename = input("No Soal: ") + ".txt";
 data = dlmread(filename);
