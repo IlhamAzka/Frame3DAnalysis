@@ -47,8 +47,8 @@ for i=1:NCP
     CP(i, 2) = data(d+1, 2);
     CP(i, 3) = data(d+1, 3);
     CP(i, 4) = data(d+1, 4);
-  end
-    d = d + 1;
+end
+d = d + 1;
 
 % PART V
 d = d + 1;
