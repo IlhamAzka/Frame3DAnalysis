@@ -613,10 +613,6 @@ function [FF] = MFEFG(NCJT, T, QF, FF)
     %         FF(i) = FF(i) + T(j, i) * QF(j);
     %     end
     % end
-    % fprintf("\nT\n");
-    % disp(T)
-    % fprintf("\nFF\n");
-    % disp(FF)
 end
 
 function [QF] = MFEFLL(IML, BL, MP, PM, QF)
