@@ -3,6 +3,8 @@
 ## Dividing Equation for LDTYPE 4
 Because of the long equation of fixed end shear and fixed end moment on the beginning end of the member the equation is divided into different parts so the matlab code for the equation more readable
 
+equation:
+
 <img src="fsb_eq_black_bg.svg">
 
 <img src="fmb_eq_black_bg.svg">
