@@ -776,7 +776,7 @@ function [M] = INIT_COLUMN_TRANS(AOR, RXX, RXY, R_T)
     M(3, 3) = cosd(AOR);
 end
 
-function [M] = INIT_NORMAL_TRANS(RXX, RXY, RXZ, RYX, RYY, RYZ, RZX, RZY, RZZ, M)
+function [M] = INIT_BEAM_TRANS(RXX, RXY, RXZ, RYX, RYY, RYZ, RZX, RZY, RZZ, M)
     M(1, 1) = RXX;
     M(1, 2) = RXY;
     M(1, 3) = RXZ; 
@@ -796,7 +796,7 @@ function [T] = MTRANS(AOR, RXX, RXY, RXZ, RYX, RYY, RYZ, RZX, RZY, RZZ, NCJT, T)
         R_T = INIT_COLUMN_TRANS(AOR, RXX, RXY, R_T);
     else
         % fprintf("\nBEAM MEMBER\n")
-        R_T = INIT_NORMAL_TRANS(RXX, RXY, RXZ, RYX, RYY, RYZ, RZX, RZY, RZZ, R_T);
+        R_T = INIT_BEAM_TRANS(RXX, RXY, RXZ, RYX, RYY, RYZ, RZX, RZY, RZZ, R_T);
     end
 
     T(1:3, 1:3)     = R_T(1:3, 1:3);
