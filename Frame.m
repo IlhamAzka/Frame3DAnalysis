@@ -498,30 +498,12 @@ function DISPLACEMENT_DISPLAY(NJ, NCJT, NS, NSC, P, NDOF)
 end
 
 function REACTION_FORCE_DISPLAY(NJ, NCJT, NR, NS, NSC, R, MSUP)
-    temp_table_r = zeros(NS * 2, 2);
     e = NJ * NCJT - NR + 1;
     DOF = NJ * NCJT;
     temp_r = zeros(NR, 2);
     for i=e:DOF
         temp_r(i - e + 1, 1) = i;
         temp_r(i - e + 1, 2) = R(i - e + 1);
-    end
-    support_gnn = zeros(NS * 2, 1);
-    for i=1:NS
-        temp_table_r(i * NCJT, 1) = NSC(MSUP(i, 1) * NCJT);
-        temp_table_r(i * NCJT - 1, 1) = NSC(MSUP(i, 1) * NCJT - 1);
-        temp_table_r(i * NCJT - 2, 1) = NSC(MSUP(i, 1) * NCJT - 2);
-        temp_table_r(i * NCJT - 3, 1) = NSC(MSUP(i, 1) * NCJT - 3);
-        temp_table_r(i * NCJT - 4, 1) = NSC(MSUP(i, 1) * NCJT - 4);
-        temp_table_r(i * NCJT - 5, 1) = NSC(MSUP(i, 1) * NCJT - 5);
-    end
-    % MATCH TEMP_R AND SUPPORT_GNN
-    for i=1:NS*NCJT
-        for j=1:NR
-            if temp_table_r(i, 1) == temp_r(j, 1)
-                temp_table_r(i, 2) = temp_r(j, 2);
-            end
-        end
     end
     % SPLIT TO X, Y, and Z
     r1 = zeros(NS, 1);
@@ -532,12 +514,12 @@ function REACTION_FORCE_DISPLAY(NJ, NCJT, NR, NS, NSC, R, MSUP)
     r6 = zeros(NS, 1);
     b = 1;
     for i=1:NS
-        r1(i) = temp_table_r(b  , 2);
-        r2(i) = temp_table_r(b+1, 2);
-        r3(i) = temp_table_r(b+2, 2);
-        r4(i) = temp_table_r(b+3, 2);
-        r5(i) = temp_table_r(b+4, 2);
-        r6(i) = temp_table_r(b+5, 2);
+        r1(i) = temp_r(b  , 2);
+        r2(i) = temp_r(b+1, 2);
+        r3(i) = temp_r(b+2, 2);
+        r4(i) = temp_r(b+3, 2);
+        r5(i) = temp_r(b+4, 2);
+        r6(i) = temp_r(b+5, 2);
         b = b + NCJT;
     end
     fprintf("\n\nREACTION FORCE\n\n");
